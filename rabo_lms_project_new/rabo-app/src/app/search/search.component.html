@@ -1,0 +1,54 @@
+
+
+    
+  
+<div class="container" width="25%">
+    <form (ngSubmit)="onSubmit()" #f="ngForm">
+        <div class="container Search" 
+        ngModelGroup="searchData"
+        #searchData="ngModelGroup">
+
+
+        <div class="login-input">
+          <div class="col-xs-4 col-sm-5">
+            <br>
+            <input type="text" class="form-control" placeholder="first name" 
+            [(ngModel)]="loanDetails.firstName"
+            name="firstName" 
+            
+            #firstname="ngModel" />
+          </div>
+          <div class="col-xs-4 col-sm-5">
+            
+            <input type="text" class="form-control" placeholder="last name" 
+            [(ngModel)]="loanDetails.lastName"
+            name="lastName" 
+            #lastName="ngModel" />
+          </div>
+
+          <div class="col-xs-4 col-sm-5">
+            <input type="text" class="form-control" placeholder="loan number" 
+            [(ngModel)]="loanDetails.loanNumber"
+            name="loanNumber" 
+            #loanNumber="ngModel" />
+          </div>
+          <div class="col-xs-4 col-sm-5">
+            <span>
+            <button class="btn btn-primary" type="submit" [disabled] = "!f.valid" >Search</button>
+          </span>
+          &nbsp;
+          <span>
+            <button class="btn btn-primary" type="button" (click)="onClearForm(f)">Clear</button>
+          </span>
+          </div>
+          <br>
+            
+        </div>
+        </div>
+        <div>
+            <br>
+        </div>
+        
+        
+        
+        <router-outlet></router-outlet>

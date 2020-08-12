@@ -1,0 +1,25 @@
+<div class="container navbar-expand-sm"> 
+
+  <div class="row md-3">
+    <nav class="navbar navbar-light">
+      <a class="navbar-brand" href="#">
+        <img src="../../assets/rabo_logo.jpg" width="90" height="80" alt="">
+      </a>
+      <div class="row md-5" *ngIf="isloggin != null && isloggin === true">
+          <ul class="nav navbar-nav">
+            
+            <li [ngClass]="getcurrentScreen('search')"><a  routerLink="search"> Search</a></li>   
+    
+            <li [ngClass]="getcurrentScreen('addloan')" *ngIf="isAdminUser != null && isAdminUser === true"
+                ><a  routerLink="/add-loan"> Add Loan</a>
+            </li>   
+            
+            <li class=""><a routerLink="/logout"> Logout</a></li>   
+          </ul>
+      </div>
+      </nav>
+  </div>      
+    <br>
+    <br>
+
+</div>

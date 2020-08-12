@@ -1,0 +1,103 @@
+
+        
+
+
+<div class="container" width="25%">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm" id="addForm">
+        <div class="container add-loan" 
+        ngModelGroup="addLoanData"
+        #addLoanData="ngModelGroup">
+        
+            <div class="container login-input">
+                <br>
+                <span style="color:blue;font-weight:bold"> {{msg}}</span>
+                <div class="col-xs-4 col-sm-5 "> 
+                        <input type="text" class="form-control" placeholder="Enter first name" 
+                        ngModel 
+                        name="firstName" 
+                        #firstName="ngModel" 
+                        required     
+                        [(ngModel)]="loanDetails.firstName" 
+                        [class.is-invalid]="firstName.invalid && firstName.touched" />
+                        <small class="text-danger" [class.d-none] ="firstName.valid || firstName.untouched"> User name is required field</small>                     
+                </div>
+                <br>
+                <div class="col-xs-4 col-sm-5">
+                    
+                    <input type="text" class="form-control" placeholder="Enter Last name" 
+                    #lastName="ngModel" 
+                    name="lastName" 
+                    [(ngModel)]="loanDetails.lastName"
+                    required 
+                    [class.is-invalid]="lastName.invalid && lastName.touched" />
+                    <small class="text-danger" [class.d-none] ="lastName.valid || lastName.untouched"> Last name is required field</small>
+                </div>
+                
+                <br>
+
+            
+            <div class="col-xs-4 col-sm-5">
+                
+                <input type="text" class="form-control" placeholder="Enter Loan Number" 
+                #loanNumber="ngModel" 
+                name="loanNumber" 
+                
+                [(ngModel)]="loanDetails.loanNumber"
+                required
+                [class.is-invalid]="loanNumber.invalid && loanNumber.touched" />
+                        <small class="text-danger" [class.d-none] ="loanNumber.valid || loanNumber.untouched"> loanNumber is required field</small>
+            </div>
+            
+            <br>
+            <div class="col-xs-4 col-sm-5">
+                
+                <input type="text" class="form-control" placeholder="Enter Address 1" 
+                #address1="ngModel" 
+                name="address1" 
+                [(ngModel)]="loanDetails.address1"
+                required
+                [class.is-invalid]="address1.invalid && address1.touched" />
+                        <small class="text-danger" [class.d-none] ="address1.valid || address1.untouched"> address1 is required field</small>
+            </div>
+            
+            <br>
+            <div class="col-xs-4 col-sm-5">
+                
+                <input type="text" class="form-control" placeholder="Enter Address 2" 
+                #address2="ngModel" 
+                name="address2" 
+                [(ngModel)]="loanDetails.address2"
+                required
+                [class.is-invalid]="address2.invalid && address2.touched" />
+                <small class="text-danger" [class.d-none] ="address2.valid || address2.untouched"> address2 is required field</small>
+            </div>
+
+            
+            <br>
+            <div class="col-xs-4 col-sm-5">
+               
+                <input type="text" class="form-control" placeholder="Enter city" 
+                #city="ngModel" 
+                name="city" 
+                [(ngModel)]="loanDetails.city"
+                required
+                [class.is-invalid]="city.invalid && city.touched" />
+                <small class="text-danger" [class.d-none] ="city.valid || city.untouched"> City is required field</small>
+    
+            </div>
+            
+            <br>
+            <div class="col-xs-4 col-sm-5">
+                <span>
+                    <button class="btn btn-primary" type="submit" [disabled] = "!f.valid" >Add Loan</button>
+                </span>
+                &nbsp;
+                <span>
+                    <button class="btn btn-primary" (click)="onClearForm(f)">Clear</button>
+                </span>
+            </div>
+            <br>      
+            </div>
+        </div>
+    </form>
+</div>

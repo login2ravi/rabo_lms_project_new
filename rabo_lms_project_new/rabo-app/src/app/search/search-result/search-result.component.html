@@ -1,0 +1,49 @@
+
+
+
+  <div *ngIf="resultList != null && resultList.length > 0">
+    <table class="table table-hover">
+        <thead>
+           <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Loan Number</th>
+              <th>City</th>
+              <th>Amount</th>
+              
+           </tr>
+        </thead>
+           <tbody>
+            <tr *ngFor="let item of resultList">
+                <th>{{ item.firstName }}</th>
+                <td>{{ item.lastName }}</td>
+                <td>{{ item.loanNumber }}</td>
+                <td>{{ item.city}}</td>
+                <td>{{ item.amount}} </td>
+                <td *ngIf="isAdminUser != null && isAdminUser === true">
+                   <button type="button" (click)="onEdit(item.loanNumber)">Edit</button>
+                   
+                </td>
+             </tr>
+           </tbody>
+        </table>
+      </div>     
+      <div *ngIf="resultList != null && resultList.length === 0">
+         <table class="table table-hover">
+            <thead>
+               <tr>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Loan Number</th>
+                  <th>City</th>
+                  <th>Amount</th>
+                  
+               </tr>
+            </thead>    
+            <tbody >
+               <tr colspan=5>
+                <td>No records to display</td>
+               </tr>
+             </tbody>
+             </table>
+      </div> 

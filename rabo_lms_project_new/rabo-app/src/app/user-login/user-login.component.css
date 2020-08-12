@@ -1,0 +1,28 @@
+.Absolute-Center {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  float: left;
+}
+
+.container-login input.ng-invalid.ng-touched {
+  border: 2px solid red;
+  border-radius: 4px;
+}
+
+.login-input {
+  border: 2px outset rgb(241, 116, 6);    
+ 
+}
+
+.login-h2 {    
+  
+  color: rgb(241, 116, 6);
+}

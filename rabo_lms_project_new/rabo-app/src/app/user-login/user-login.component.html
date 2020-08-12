@@ -1,0 +1,61 @@
+<div class="container">
+    
+    <div class="row">
+        <div class=" col-sm-12 col-md-10 col-md-offset-1 ">
+            <form (ngSubmit)="onSubmit()" #f="ngForm">
+                <div class="login" 
+                ngModelGroup="userData"
+                #userData="ngModelGroup">
+                <div class="login-h2 col-xs-4 col-sm-5"><h2>User Login</h2></div>
+                    <br>
+                    <div class="login-input">
+                      <div>
+                        <br>
+                      </div> 
+                      <div class="col-xs-4 col-sm-5" style="color: red;" >{{invalidUserMessage}}</div>
+                      <div class=" col-xs-4 col-sm-5">
+                        <input type="username" class="form-control"
+                        
+                         id="username" placeholder="username" 
+                        [(ngModel)]="user.userName"
+                        name="username"
+                        #username="ngModel" 
+                        required
+                        [class.is-invalid]="username.invalid && username.touched" />
+                        
+                        <small id="username_error" class="text-danger" [class.d-none] ="username.valid || username.untouched"> User name is required field</small>
+                      </div>
+
+                      <br>
+                  <div class="col-xs-4 col-sm-5">
+                    <input type="password" class="form-control" placeholder="password" 
+                    [(ngModel)]="user.password"
+                    name="password" 
+                    #password="ngModel" 
+                    required
+                    [class.is-invalid]="password.invalid && password.touched"/>
+                    <small class="text-danger" [class.d-none] ="password.valid || password.untouched"> Password is required field</small>
+                  </div>
+                  <br>
+                  <div class="col-xs-4 col-sm-5">
+                    <button class="btn btn-primary" type="submit" [disabled] = "!f.valid" >Submit</button>
+                            
+                </div>
+
+                <div>
+                  <br><br>
+                </div> 
+
+                    </div>
+                    
+                  
+                  
+                
+                
+                </div>
+                
+            </form>
+            
+        </div>
+    </div>
+    </div>
